@@ -5,7 +5,7 @@ public class TestParagraphBlock
     [Fact]
     public void Constructor_ShouldPreserveText()
     {
-        var expectedText = "This is a sample paragraph.";
+        var expectedText = "Hello Nanibgal";
 
         var paragraphBlock = new ParagraphBlock(expectedText);
 
@@ -16,5 +16,13 @@ public class TestParagraphBlock
     public void Constructor_ShouldRejectNullText()
     {
         Assert.Throws<ArgumentNullException>(() => new ParagraphBlock(null!));
+    }
+
+    [Fact]
+    public void Constructor_ShouldAllowEmptyText()
+    {
+        var paragraphBlock = new ParagraphBlock(string.Empty);
+
+        Assert.Equal(string.Empty, paragraphBlock.Text);
     }
 }
