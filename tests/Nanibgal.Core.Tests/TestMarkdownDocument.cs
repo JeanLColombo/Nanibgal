@@ -21,7 +21,7 @@ public class TestMarkdownDocument
     [Fact]
     public void Constructor_ShouldCopySource()
     {
-        var blocks = new List<IMarkdownBlock> { new TestMarkdownBlock() };
+        var blocks = new List<IMarkdownNode> { new TestMarkdownBlock() };
 
         var document = new MarkdownDocument(blocks);
 
@@ -31,7 +31,7 @@ public class TestMarkdownDocument
         Assert.Single(document.Blocks);
     }
 
-    private sealed class TestMarkdownBlock : IMarkdownBlock
+    private sealed class TestMarkdownBlock : IMarkdownNode
     {
     }
 }

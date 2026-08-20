@@ -3,7 +3,7 @@ namespace Nanibgal.Core;
 /// <summary>
 /// Represents a paragraph block in a markdown document.
 /// </summary>
-public sealed class ParagraphBlock : IMarkdownBlock
+public sealed class ParagraphBlock : IMarkdownNode
 {
     public string Text { get; }
 

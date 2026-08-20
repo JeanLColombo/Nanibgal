@@ -3,7 +3,7 @@ namespace Nanibgal.Core;
 /// <summary>
 /// Represents a heading block in a markdown document.
 /// </summary>
-public sealed class HeadingBlock : IMarkdownBlock
+public sealed class HeadingBlock : IMarkdownNode
 {
     public int Level { get; }
     public string Text { get; }
