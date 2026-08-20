@@ -15,7 +15,7 @@
 !.vscode/extensions.json
 !.vscode/settings.json
 !.vscode/tasks.json
-!.vscode/launch.json
+.vscode/launch.json
 
 # JetBrains
 _ReSharper*/
