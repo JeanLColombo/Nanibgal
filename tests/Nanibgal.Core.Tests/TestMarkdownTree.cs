@@ -1,13 +1,13 @@
 ﻿namespace Nanibgal.Core.Tests;
 
-public class TestMarkdownDocument
+public class TestMarkdownTree
 {
     [Fact]
     public void Constructor_ShouldPreserveBlocks()
     {
         var expected = new [] { new TestMarkdownBlock() };
 
-        var document = new MarkdownDocument(expected);
+        var document = new MarkdownTree(expected);
 
         Assert.Equal(expected, document.Nodes);
     }
@@ -15,7 +15,7 @@ public class TestMarkdownDocument
     [Fact]
     public void Constructor_ShouldRejectNullSource()
     {
-        Assert.Throws<ArgumentNullException>(() => new MarkdownDocument(null!));
+        Assert.Throws<ArgumentNullException>(() => new MarkdownTree(null!));
     }
 
     [Fact]
@@ -23,7 +23,7 @@ public class TestMarkdownDocument
     {
         var blocks = new List<IMarkdownNode> { new TestMarkdownBlock() };
 
-        var document = new MarkdownDocument(blocks);
+        var document = new MarkdownTree(blocks);
 
         blocks.Clear();
 

@@ -6,12 +6,12 @@ namespace Nanibgal.Core;
 public sealed class MarkdownParser : IMarkdownParser
 {
     /// <summary>
-    /// Parses the specified source string into a <see cref="MarkdownDocument"/>.
+    /// Parses the specified source string into a <see cref="MarkdownTree"/>.
     /// </summary>
     /// <param name="source">The source string to parse.</param>
-    /// <returns>The parsed <see cref="MarkdownDocument"/>.</returns>
+    /// <returns>The parsed <see cref="MarkdownTree"/>.</returns>
     /// <exception cref="ArgumentNullException">Thrown when the <paramref name="source"/> parameter is null.</exception>
-    public MarkdownDocument Parse(string source)
+    public MarkdownTree Parse(string source)
     {
         ArgumentNullException.ThrowIfNull(source, nameof(source));
 

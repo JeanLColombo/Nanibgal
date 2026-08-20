@@ -2,6 +2,19 @@ namespace Nanibgal.Core.Tests;
 
 public class TestMarkdownParser
 {
+    public static TheoryData<string> MarkdownSources => new()
+    {
+        "# Heading 1\n\nThis is a paragraph.",
+        """
+        # Heading 1
+
+        This is a paragraph.
+
+        ## Heading 2
+
+        Another paragraph.
+        """
+    };
 /*
     [Fact]
     public void Parse_ShouldThrowNotImplementedException()
