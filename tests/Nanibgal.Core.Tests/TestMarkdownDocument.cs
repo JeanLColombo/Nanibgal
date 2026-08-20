@@ -9,7 +9,7 @@ public class TestMarkdownDocument
 
         var document = new MarkdownDocument(expected);
 
-        Assert.Equal(expected, document.Blocks);
+        Assert.Equal(expected, document.Nodes);
     }
 
     [Fact]
@@ -27,8 +27,8 @@ public class TestMarkdownDocument
 
         blocks.Clear();
 
-        Assert.NotSame(blocks, document.Blocks);
-        Assert.Single(document.Blocks);
+        Assert.NotSame(blocks, document.Nodes);
+        Assert.Single(document.Nodes);
     }
 
     private sealed class TestMarkdownBlock : IMarkdownNode

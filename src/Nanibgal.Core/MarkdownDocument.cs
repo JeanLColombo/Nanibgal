@@ -8,16 +8,16 @@ public sealed class MarkdownDocument
     /// <summary>
     /// List of blocks that make up the document.
     /// </summary>
-    public IReadOnlyList<IMarkdownNode> Blocks { get; }
+    public IReadOnlyList<IMarkdownNode> Nodes { get; }
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="MarkdownDocument"/> class with the specified blocks.
+    /// Initializes a new instance of the <see cref="MarkdownDocument"/> class with the specified nodes.
     /// </summary>
-    /// <param name="blocks">A list of blocks that make up the document.</param>
-    /// <exception cref="ArgumentNullException">Thrown when the <paramref name="blocks"/> parameter is null.</exception>
-    public MarkdownDocument(IReadOnlyList<IMarkdownNode> blocks)
+    /// <param name="nodes">A list of nodes that make up the document.</param>
+    /// <exception cref="ArgumentNullException">Thrown when the <paramref name="nodes"/> parameter is null.</exception>
+    public MarkdownDocument(IReadOnlyList<IMarkdownNode> nodes)
     {
-        ArgumentNullException.ThrowIfNull(blocks, nameof(blocks));
-        Blocks = blocks.ToArray();
+        ArgumentNullException.ThrowIfNull(nodes, nameof(nodes));
+        Nodes = nodes.ToArray();
     }
 }
