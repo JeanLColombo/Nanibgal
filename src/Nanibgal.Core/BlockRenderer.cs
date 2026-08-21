@@ -21,4 +21,24 @@ public sealed class BlockRenderer
         var pipeline = new MarkdownPipelineBuilder().Build();
         _document = Markdown.Parse(source, pipeline);
     }
+
+    /// <summary>
+    /// Renders the block at the specified index.
+    /// </summary>
+    /// <param name="index">The index of the block to render.</param>
+    /// <returns>The rendered block as a string.</returns>
+    public string RenderBlock(int index)
+    {
+        if (index < 0 || index >= _document.Count)
+        {
+            throw new ArgumentOutOfRangeException(nameof(index), "Index is out of range.");
+        }
+
+        var block = _document[index];
+        var writer = new StringWriter();
+        var renderer = new Markdig.Renderers.HtmlRenderer(writer);
+        renderer.Render(block);
+        writer.Flush();
+        return writer.ToString();
+    }
 }
