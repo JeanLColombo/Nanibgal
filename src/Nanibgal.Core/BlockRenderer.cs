@@ -6,6 +6,7 @@ namespace Nanibgal.Core;
 /// </summary>
 public sealed class BlockRenderer
 {
+    private static readonly MarkdownPipeline _pipeline = new MarkdownPipelineBuilder().Build();
     private readonly Markdig.Syntax.MarkdownDocument _document;
 
     public int TotalBlocks => _document.Count;
@@ -18,8 +19,7 @@ public sealed class BlockRenderer
     {
         ArgumentNullException.ThrowIfNull(source, nameof(source));
 
-        var pipeline = new MarkdownPipelineBuilder().Build();
-        _document = Markdown.Parse(source, pipeline);
+        _document = Markdown.Parse(source, _pipeline);
     }
 
     /// <summary>
