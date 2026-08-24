@@ -65,12 +65,12 @@ jobs:
           node-version: v16.11.0
 
       - name: Download code coverage report from base branch
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: base_lcov.info
 
       - name: Download code coverage report for incoming changes
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: lcov.info
 
