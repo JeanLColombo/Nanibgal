@@ -1,8 +1,10 @@
 <Solution>
   <Folder Name="/src/">
+    <Project Path="src/Nanibgal.Application/Nanibgal.Application.csproj" />
     <Project Path="src/Nanibgal.Core/Nanibgal.Core.csproj" />
   </Folder>
   <Folder Name="/tests/">
+    <Project Path="tests/Nanibgal.Application.Tests/Nanibgal.Application.Tests.csproj" />
     <Project Path="tests/Nanibgal.Core.Tests/Nanibgal.Core.Tests.csproj" />
   </Folder>
 </Solution>
