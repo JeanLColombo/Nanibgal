@@ -1,0 +1,4 @@
+<pre><code class="language-mermaid">graph TD
+    A[Markdown] --&gt; B[Markdig]
+    B --&gt; C[HTML]
+</code></pre>

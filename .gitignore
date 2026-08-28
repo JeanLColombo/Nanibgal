@@ -1,0 +1,51 @@
+# Build output
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio / Rider / VS Code user-specific files
+.vs/
+.idea/
+*.user
+*.userosscache
+*.suo
+*.rsuser
+
+# Visual Studio Code
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+.vscode/launch.json
+
+# JetBrains
+_ReSharper*/
+*.DotSettings.user
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+
+# Test results
+TestResults/
+*.trx
+
+# Coverage
+coverage/
+coverage.opencover.xml
+coverage.cobertura.xml
+*.coverage
+*.coveragexml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Generated files
+Generated/

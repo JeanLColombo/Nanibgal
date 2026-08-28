@@ -1,0 +1,5 @@
+<pre><code class="language-csharp">public static void Hello()
+{
+    Console.WriteLine(&quot;Hello, Nanibgal!&quot;);
+}
+</code></pre>
