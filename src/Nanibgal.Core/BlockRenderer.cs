@@ -7,15 +7,25 @@ namespace Nanibgal.Core;
 public sealed class BlockRenderer
 {
     private static readonly MarkdownPipeline _pipeline = new MarkdownPipelineBuilder().Build();
-    private readonly Markdig.Syntax.MarkdownDocument _document;
-
+    private Markdig.Syntax.MarkdownDocument _document;
     public int TotalBlocks => _document.Count;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="BlockRenderer"/> class with the specified source string.
     /// </summary>
     /// <param name="source">The source string to render.</param>
-    public BlockRenderer(string source)
+    public BlockRenderer(string source = "")
+    {
+        ArgumentNullException.ThrowIfNull(source, nameof(source));
+
+        _document = Markdown.Parse(source, _pipeline);
+    }
+
+    /// <summary>
+    /// Updates the source string and re-parses the Markdown content.
+    /// </summary>
+    /// <param name="source">The new source string to render.</param>
+    public void UpdateSource(string source)
     {
         ArgumentNullException.ThrowIfNull(source, nameof(source));
 

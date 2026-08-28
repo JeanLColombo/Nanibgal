@@ -4,7 +4,7 @@ namespace Nanibgal.Core.Tests;
 public class TestBlockRenderer
 {
     [Fact]
-    public void Constructor_ShouldRejectNullParser()
+    public void Constructor_ShouldRejectNullSource()
     {
         Assert.Throws<ArgumentNullException>(() => new BlockRenderer(null!));
     }
@@ -24,6 +24,29 @@ public class TestBlockRenderer
     {
         var renderer = new BlockRenderer(markdown);
         Assert.Equal(expectedCount, renderer.TotalBlocks);
+    }
+
+    [Fact]
+    public void UpdateSource_ShouldRejectNullSource()
+    {
+        var renderer = new BlockRenderer();
+        Assert.Throws<ArgumentNullException>(() => renderer.UpdateSource(null!));
+    }
+
+    [Fact]
+    public void UpdateSource_ShouldUpdateTotalBlocks()
+    {
+        var renderer = new BlockRenderer();
+        renderer.UpdateSource("# Heading 1\n\nHello Nanibgal");
+        Assert.Equal(2, renderer.TotalBlocks);
+
+        // Update the source string
+        renderer.UpdateSource("# New Heading\n\nUpdated content");
+        Assert.Equal(2, renderer.TotalBlocks);
+
+        // Add new section
+        renderer.UpdateSource("# New Heading\n\nUpdated content\n\n## Subheading");
+        Assert.Equal(3, renderer.TotalBlocks);
     }
 
     [Theory]
